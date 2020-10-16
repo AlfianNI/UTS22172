@@ -21,4 +21,5 @@ export class HomePage implements OnInit {
     this.motherboard = this.itemService.getAllMother();
     this.gpu = this.itemService.getAllGPU();
   }
+  
 }
