@@ -19,12 +19,24 @@
                 <ion-list>
                     <ion-item>
                         {{loaded.merek}} {{loaded.model}}
+                        <br>Harga: Rp. {{loaded.harga}}
+                        <br>Stok: {{loaded.stok}}
                     </ion-item>
-                    <ion-item>
-                        Rp. {{loaded.harga}}
+                    <ion-item *ngIf="loaded.id.includes('ram')">
+                        Spesifikasi :
+                        <br> Speed : {{loaded.speed}}
+                        <br> Ukuran : {{loaded.ukuran}}
                     </ion-item>
-                    <ion-item>
-                        Stok: {{loaded.stok}}
+                    <ion-item *ngIf="loaded.id.includes('mb')">
+                        Spesifikasi :
+                        <br> Chipset : {{loaded.chipset}}
+                        <br> Untuk Processos : {{loaded.processor}}
+                    </ion-item>
+                    <ion-item *ngIf="loaded.id.includes('cpu')">
+                        Spesifikasi :
+                        <br> Base Clock : {{loaded.baseclk}}
+                        <br> Boosted Clock : {{loaded.boostclk}}
+                        <br> Core : {{loaded.core}} Thread : {{loaded.thread}}
                     </ion-item>
                 </ion-list>
             </ion-col>
