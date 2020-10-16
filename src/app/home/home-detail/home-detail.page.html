@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Product</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-img [src]="loaded.foto"></ion-img>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-list>
+                    <ion-item>
+                        {{loaded.merek}} {{loaded.model}}
+                    </ion-item>
+                    <ion-item>
+                        Rp. {{loaded.harga}}
+                    </ion-item>
+                    <ion-item>
+                        Stok: {{loaded.stok}}
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
