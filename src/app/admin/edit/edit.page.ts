@@ -60,7 +60,7 @@ export class EditPage implements OnInit {
         role:'cancel'
       },{
         text:'Yes',
-        handler: () => this.router.navigate(['/admin']);
+        handler: () => this.router.navigate(['/admin'])
       }]
     });
     await alert.present();
