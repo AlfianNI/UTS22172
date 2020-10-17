@@ -96,6 +96,14 @@ export class ItemService {
     })};
   };
 
+  deleteItem(itemId: string){
+    if(itemId.includes('cpu')){
+      this.cpu = this.cpu.filter(item=>{
+        return item.id !== itemId;
+      });
+    }
+  }
+
 
 
 
