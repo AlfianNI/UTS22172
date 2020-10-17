@@ -6,7 +6,7 @@
         <ion-buttons slot="start">
             <ion-menu-button menu="main-menu"></ion-menu-button>
         </ion-buttons>
-        <ion-button slot="end" routerLink="./input">
+        <ion-button slot="end" href="./input">
             <ion-icon name="add-circle-outline"></ion-icon>
         </ion-button>
 
@@ -16,7 +16,7 @@
 <ion-content [fullscreen]="true">
     <ion-list>
         <ion-item-sliding *ngFor="let CPU of cpu" #slidingItem>
-            <ion-item-options side="start">
+            <ion-item-options side="end">
                 <ion-item-option color="danger" (click)="presentAlert()">
                     <ion-icon name="trash-bin-outline">
                     </ion-icon>
@@ -38,8 +38,8 @@
                 </ion-label>
             </ion-item>
 
-            <ion-item-options side="end">
-                <ion-item-option color="primary">
+            <ion-item-options side="start">
+                <ion-item-option color="primary" [routerLink]="['./',CPU.id]">
                     <ion-icon name="pencil-outline">
                     </ion-icon>
                 </ion-item-option>
@@ -48,7 +48,7 @@
         </ion-item-sliding>
 
         <ion-item-sliding *ngFor="let GPU of gpu" #slidingItem>
-            <ion-item-options side="start">
+            <ion-item-options side="end">
                 <ion-item-option color="danger" (click)="presentAlert()">
                     <ion-icon name="trash-bin-outline">
                     </ion-icon>
@@ -70,8 +70,8 @@
                 </ion-label>
             </ion-item>
 
-            <ion-item-options side="end">
-                <ion-item-option color="primary">
+            <ion-item-options side="start">
+                <ion-item-option color="primary" [routerLink]="['./',GPU.id]">
                     <ion-icon name="pencil-outline">
                     </ion-icon>
                 </ion-item-option>
@@ -80,7 +80,7 @@
         </ion-item-sliding>
 
         <ion-item-sliding *ngFor="let RAM of ram" #slidingItem>
-            <ion-item-options side="start">
+            <ion-item-options side="end">
                 <ion-item-option color="danger" (click)="presentAlert()">
                     <ion-icon name="trash-bin-outline">
                     </ion-icon>
@@ -102,8 +102,8 @@
                 </ion-label>
             </ion-item>
 
-            <ion-item-options side="end">
-                <ion-item-option color="primary">
+            <ion-item-options side="start">
+                <ion-item-option color="primary" [routerLink]="['./',RAM.id]">
                     <ion-icon name="pencil-outline">
                     </ion-icon>
                 </ion-item-option>
@@ -112,7 +112,7 @@
         </ion-item-sliding>
 
         <ion-item-sliding *ngFor="let MB of motherboard" #slidingItem>
-            <ion-item-options side="start">
+            <ion-item-options side="end">
                 <ion-item-option color="danger" (click)="presentAlert()">
                     <ion-icon name="trash-bin-outline">
                     </ion-icon>
@@ -134,8 +134,8 @@
                 </ion-label>
             </ion-item>
 
-            <ion-item-options side="end">
-                <ion-item-option color="primary">
+            <ion-item-options side="start">
+                <ion-item-option color="primary" [routerLink]="['./',MB.id]">
                     <ion-icon name="pencil-outline">
                     </ion-icon>
                 </ion-item-option>

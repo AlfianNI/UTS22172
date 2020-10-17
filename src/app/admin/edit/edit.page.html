@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>Edit</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/admin"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <form #f="ngForm" (ngSubmit)="presentAlert(f)">
+            <ion-list>
+                <ion-item>
+                    <ion-label position="floating">URL Foto</ion-label>
+                    <ion-input type="text" ngModel name="imgLink" #imgCtrl="ngModel" value="333">
+                    </ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Model</ion-label>
+                    <ion-input type="text" ngModel name="model" #imgCtrl="ngModel">
+                    </ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Merek</ion-label>
+                    <ion-input type="text" ngModel name="merek" #imgCtrl="ngModel">
+                    </ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">harga</ion-label>
+                    <ion-input type="number" ngModel name="harga" #imgCtrl="ngModel">
+                    </ion-input>
+                </ion-item>
+                <ion-item *ngIf="loaded.id.includes('mb')">
+                    <ion-label position="floating">Chipset</ion-label>
+                    <ion-input type="text" ngModel name="chipset" #imgCtrl="ngModel">
+                    </ion-input>
+                </ion-item>
+                <ion-item *ngIf="loaded.id.includes('mb')">
+                    <ion-label position="floating">Processor Type</ion-label>
+                    <ion-input type="text" ngModel name="processortype" #imgCtrl="ngModel">
+                    </ion-input>
+                </ion-item>
+                <ion-item *ngIf="loaded.id.includes('ram')">
+                    <ion-label position="floating">Speed</ion-label>
+                    <ion-input type="text" ngModel name="speed" #imgCtrl="ngModel"></ion-input>
+                </ion-item>
+                <ion-item *ngIf="loaded.id.includes('ram')">
+                    <ion-label position="floating">Size</ion-label>
+                    <ion-input type="text" ngModel name="size" #imgCtrl="ngModel"></ion-input>
+                </ion-item>
+                <ion-item *ngIf="loaded.id.includes('cpu')">
+                    <ion-label position="floating">Base Clock</ion-label>
+                    <ion-input type="number" ngModel name="baseClk" #imgCtrl="ngModel"></ion-input>
+
+                    <ion-label position="floating">Boost Clock</ion-label>
+                    <ion-input type="number" ngModel name="boostClk" #imgCtrl="ngModel"></ion-input>
+                </ion-item>
+                <ion-item *ngIf="loaded.id.includes('cpu')">
+                    <ion-label position="floating">Core</ion-label>
+                    <ion-input type="number" ngModel name="core" #imgCtrl="ngModel"></ion-input>
+
+                    <ion-label position="floating">Thread</ion-label>
+                    <ion-input type="number" ngModel name="thread" #imgCtrl="ngModel"></ion-input>
+                </ion-item>
+
+            </ion-list>
+            <ion-button type="submit" color="primary" expand="block">Save</ion-button>
+        </form>
+    </ion-card>
+</ion-content>

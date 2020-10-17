@@ -1,9 +1,38 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>input</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/admin"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Input</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+    <ion-card>
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <ion-list>
+                <ion-item>
+                    <ion-label position="floating">URL Foto</ion-label>
+                    <ion-input type="text" ngModel name="imgLink" #imgCtrl="ngModel">
+                    </ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Model</ion-label>
+                    <ion-input type="text" ngModel name="jenis" #imgCtrl="ngModel">
+                    </ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Merek</ion-label>
+                    <ion-input type="text" ngModel name="merek" #imgCtrl="ngModel">
+                    </ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">harga</ion-label>
+                    <ion-input type="number" ngModel name="imgLink" #imgCtrl="ngModel">
+                    </ion-input>
+                </ion-item>
+            </ion-list>
+            <ion-button type="submit" color="primary" expand="block">Save</ion-button>
+        </form>
+    </ion-card>
 </ion-content>

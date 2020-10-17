@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-input',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputPage implements OnInit {
 
-  constructor() { }
+  
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  onSubmit(form: NgForm){
+    const img = form.value.imgLink;
+    const jenis = form.value.jenis;
+    const harga = form.value.harga;
+    this.router.navigate(['/admin']);
+    
   }
 
 }
